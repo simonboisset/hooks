@@ -1,13 +1,13 @@
 {
   "name": "onehook",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
-    "up":"yarn upgrade-interactive --latest",
+    "up": "yarn upgrade-interactive --latest",
     "publish:major": "turbo run publish:major",
     "publish:minor": "turbo run publish:minor",
     "publish:patch": "turbo run publish:patch",
