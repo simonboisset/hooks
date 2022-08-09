@@ -1,0 +1,34 @@
+{
+  "name": "onehook",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "up":"yarn upgrade-interactive --latest",
+    "publish:major": "turbo run publish:major",
+    "publish:minor": "turbo run publish:minor",
+    "publish:patch": "turbo run publish:patch",
+    "dev": "turbo run dev --parallel",
+    "test": "turbo run build --filter=@ts-v/core && jest",
+    "test-ci": "turbo run build --filter=@ts-v/core && jest --config=./jest-ci.config.js",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.197",
+    "@swc/jest": "^0.2.21",
+    "@types/jest": "^28.1.1",
+    "jest": "^28.1.0",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.5"
+}
