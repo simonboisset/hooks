@@ -1,0 +1,53 @@
+{
+  "name": "@onehook/boolean",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && builder && tsc --project tsconfig.build.json",
+    "version:major": "yarn version --new-version major --no-git-tag-version",
+    "version:minor": "yarn version --new-version minor --no-git-tag-version",
+    "version:patch": "yarn version --new-version patch --no-git-tag-version",
+    "publish:major": "yarn publish --access public",
+    "publish:minor": "yarn publish --access public",
+    "publish:patch": "yarn publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonboisset/onehook",
+    "directory": "packages/boolean"
+  },
+  "bugs": {
+    "url": "https://github.com/simonboisset/onehook/issues"
+  },
+  "homepage": "https://github.com/simonboisset/onehook",
+  "author": "Simon Boisset <simonboisset.dev@gmail.com>",
+  "license": "MIT",
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "builder": "*",
+    "esbuild": "^0.14.42",
+    "esbuild-node-externals": "^1.4.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "dependencies": {},
+  "keywords": [
+    "typescript",
+    "react",
+    "hook"
+  ]
+}
