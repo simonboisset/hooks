@@ -1,5 +1,5 @@
 {
-  "name": "@onehook/normalize",
+  "name": "@onehook/list",
   "version": "0.1.2",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
