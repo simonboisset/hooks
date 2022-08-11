@@ -9,3 +9,9 @@ yarn add @onehook/event
 ```
 
 # Usage
+
+```ts
+useEvent('my-event', () => {
+  // do something
+});
+```
