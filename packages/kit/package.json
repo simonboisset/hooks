@@ -1,6 +1,6 @@
 {
   "name": "@onehook/kit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -47,15 +47,15 @@
   "dependencies": {
     "@onehook/boolean": "*",
     "@onehook/count": "*",
-    "@onehook/updated-ref": "*",
-    "@onehook/drag-and-drop": "*",
-    "@onehook/intersection-observer": "*",
     "@onehook/debounce": "*",
+    "@onehook/drag-and-drop": "*",
     "@onehook/event": "*",
+    "@onehook/intersection-observer": "*",
     "@onehook/interval": "*",
     "@onehook/list": "*",
     "@onehook/storage": "*",
-    "@onehook/timeout": "*"
+    "@onehook/timeout": "*",
+    "@onehook/updated-ref": "*"
   },
   "keywords": [
     "typescript",
