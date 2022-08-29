@@ -1,13 +1,26 @@
-import { useCallback, useState } from 'react';
+import { Reducer, useCallback, useReducer } from 'react';
 
-const useBoolean = (defaultValue?: boolean) => {
-  const [value, setValue] = useState(!!defaultValue);
+type BooleanAction = 'false' | 'true' | 'toggle';
 
-  const setTrue = useCallback(() => setValue(true), []);
-  const setFalse = useCallback(() => setValue(false), []);
-  const toggle = useCallback(() => setValue((prev) => !prev), []);
+const booleanReducer: Reducer<boolean, BooleanAction> = (prevState, action) => {
+  switch (action) {
+    case 'toggle':
+      return !prevState;
+    case 'true':
+      return true;
+    default:
+      return false;
+  }
+};
 
-  return [value, setTrue, setFalse, toggle, setValue] as const;
+const useBoolean = (defaultValue = false) => {
+  const [value, dispatch] = useReducer(booleanReducer, defaultValue);
+
+  const setTrue = useCallback(() => dispatch('true'), []);
+  const setFalse = useCallback(() => dispatch('false'), []);
+  const toggle = useCallback(() => dispatch('toggle'), []);
+
+  return [value, { setTrue, setFalse, toggle }] as const;
 };
 
 export default useBoolean;

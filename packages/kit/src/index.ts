@@ -1,8 +1,8 @@
 import useBoolean from '@onehook/boolean';
 import useCount from '@onehook/count';
 import useDebounce from '@onehook/debounce';
-import useEvent from '@onehook/event';
 import useDragAndDrop from '@onehook/drag-and-drop';
+import useEvent from '@onehook/event';
 import useIntersectionObserver from '@onehook/intersection-observer';
 import useInterval from '@onehook/interval';
 import useList, {
@@ -18,6 +18,7 @@ import useList, {
 } from '@onehook/list';
 import useStorage from '@onehook/storage';
 import useTimeout from '@onehook/timeout';
+import useUpdatedRef from '@onehook/updated-ref';
 
 export {
   useBoolean,
@@ -25,6 +26,7 @@ export {
   useDebounce,
   useEvent,
   useDragAndDrop,
+  useUpdatedRef,
   useInterval,
   useList,
   useStorage,

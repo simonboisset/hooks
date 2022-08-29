@@ -1,5 +1,5 @@
 {
-  "name": "@onehook/kit",
+  "name": "@onehook/updated-ref",
   "version": "0.1.4",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -18,7 +18,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/simonboisset/onehook",
-    "directory": "packages/kit"
+    "directory": "packages/updated-ref"
   },
   "bugs": {
     "url": "https://github.com/simonboisset/onehook/issues"
@@ -44,19 +44,7 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "dependencies": {
-    "@onehook/boolean": "*",
-    "@onehook/count": "*",
-    "@onehook/updated-ref": "*",
-    "@onehook/drag-and-drop": "*",
-    "@onehook/intersection-observer": "*",
-    "@onehook/debounce": "*",
-    "@onehook/event": "*",
-    "@onehook/interval": "*",
-    "@onehook/list": "*",
-    "@onehook/storage": "*",
-    "@onehook/timeout": "*"
-  },
+  "dependencies": {},
   "keywords": [
     "typescript",
     "react",
