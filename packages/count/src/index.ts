@@ -17,13 +17,13 @@ const useCount = (params?: CountParams) => {
       }
 
       case 'increment': {
-        const nexValue = prevState + 1;
-        return params?.max && params?.max < nexValue ? params?.max : nexValue;
+        const nexValue = prevState + (params?.step || 1);
+        return params?.max !== undefined && params?.max < nexValue ? params?.max : nexValue;
       }
 
       case 'decrement': {
-        const nexValue = prevState - 1;
-        return params?.min && params?.min > nexValue ? params?.min : nexValue;
+        const nexValue = prevState - (params?.step || 1);
+        return params?.min !== undefined && params?.min > nexValue ? params?.min : nexValue;
       }
 
       case 'reset': {
@@ -43,7 +43,7 @@ const useCount = (params?: CountParams) => {
   const canIncrement = !(params?.max && params?.max < count + (params?.step || 1));
   const canDecrement = !(params?.min && params?.min < count - (params?.step || 1));
 
-  return { count, increment, decrement, reset, setCount, canIncrement, canDecrement };
+  return [count, { increment, decrement, reset, setCount, canIncrement, canDecrement }] as const;
 };
 
 export default useCount;

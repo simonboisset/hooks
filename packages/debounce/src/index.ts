@@ -5,6 +5,7 @@ const useDebounce = <T>(initialValue: T, delay?: number) => {
   const timer = useRef<NodeJS.Timeout>();
 
   const setValue = (value: T) => {
+    clearTimeout(timer.current);
     timer.current = setTimeout(() => setDebouncedValue(value), delay || 500);
   };
 

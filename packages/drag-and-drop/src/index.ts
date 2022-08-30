@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { MouseEvent, useCallback, useRef } from 'react';
 
 const useDragAndDrop = () => {
   const options = useRef({
@@ -12,7 +12,7 @@ const useDragAndDrop = () => {
     transform: 'translate3d(0px, 0px, 0)',
   });
 
-  const onMousseDown = useCallback((e: MouseEvent) => {
+  const onMouseDown = useCallback((e: MouseEvent) => {
     options.current.active = true;
     options.current.initialX = e.clientX;
     options.current.initialY = e.clientY;
@@ -26,12 +26,12 @@ const useDragAndDrop = () => {
     }
   }, []);
 
-  const onMousseUp = useCallback((e: MouseEvent) => {
+  const onMouseUp = useCallback((e: MouseEvent) => {
     options.current.active = false;
     options.current.offsetX = e.clientX;
     options.current.offsetY = e.clientY;
   }, []);
-  return { options, onMouseMove, onMousseDown, onMousseUp };
+  return { options, onMouseMove, onMouseDown, onMouseUp };
 };
 
 export default useDragAndDrop;
