@@ -14,32 +14,30 @@ on:
 jobs:
   publish-new-version:
     runs-on: ubuntu-latest
+    # env:
+    #   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    #   TURBO_REMOTE_ONLY: true
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v2
+      - name: 🔌 Checkout
+        uses: actions/checkout@v3
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 100
-      - name: Use Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+          node-version: 16.x
+          cache: 'yarn'
           registry-url: https://registry.npmjs.org/
           scope: '@onehook'
-      - name: Restore Turbo
-        uses: actions/cache@v3
-        with:
-          path: node_modules/.cache/turbo
-          key: ${{ runner.os }}-turbo
-      - name: Install dependencies
+      - name: ⏳ Yarn install
         run: yarn
-      - name: Publish New Version
+      - name: 🚀 Publish New Version
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
           git config --local user.email "simonboisset.dev@gmail.com"
           git config --local user.name "simonboisset"
-          yarn publish:${{github.event.inputs.release}}
-          yarn version --new-version ${{github.event.inputs.release}} --no-git-tag-version
+          yarn monorepo-version ${{github.event.inputs.release}}
+          yarn publish:lib
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
           git commit -a -m "v${PACKAGE_VERSION}"
           git push
