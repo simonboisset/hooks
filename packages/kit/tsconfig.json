@@ -1,8 +1,0 @@
-{
-  "extends": "builder/ts.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src"
-  }
-}

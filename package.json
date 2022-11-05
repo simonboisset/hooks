@@ -4,25 +4,22 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "utils/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=@onehook/* --filter=onehook",
     "up": "yarn upgrade-interactive --latest",
-    "publish:major": "turbo run publish:major",
-    "publish:minor": "turbo run publish:minor",
-    "publish:patch": "turbo run publish:patch",
+    "publish:lib": "turbo run publish:lib --filter=@onehook/* --filter=onehook",
     "dev": "turbo run dev --parallel",
-    "test": "turbo run build --filter=@ts-v/core && jest",
-    "test-ci": "turbo run build --filter=@ts-v/core && jest --config=./jest-ci.config.js",
+    "test": "turbo run test --filter=onehook",
+    "test:watch": "turbo run test:watch --filter=onehook",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "postinstall": "turbo run build --filter=monorepo-version"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.197",
-    "@swc/jest": "^0.2.21",
-    "@types/jest": "^28.1.1",
-    "jest": "^28.1.0",
+    "monorepo-version": "*",
     "prettier": "latest",
     "turbo": "latest"
   },
@@ -30,6 +27,10 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "printWidth": 120
+  },
   "packageManager": "yarn@1.22.5"
 }
