@@ -1,12 +1,8 @@
 {
   "name": "onehook",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "utils/*"
-  ],
+  "workspaces": ["apps/*", "packages/*", "utils/*"],
   "scripts": {
     "build": "turbo run build --filter=@onehook/* --filter=onehook",
     "up": "yarn upgrade-interactive --latest",
@@ -18,19 +14,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "turbo run build --filter=monorepo-version"
   },
-  "devDependencies": {
-    "monorepo-version": "*",
-    "prettier": "latest",
-    "turbo": "latest"
-  },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "tabWidth": 2,
-    "printWidth": 120
-  },
+  "devDependencies": { "monorepo-version": "*", "prettier": "latest", "turbo": "latest" },
+  "engines": { "npm": ">=7.0.0", "node": ">=14.0.0" },
+  "prettier": { "singleQuote": true, "tabWidth": 2, "printWidth": 120 },
   "packageManager": "yarn@1.22.5"
 }

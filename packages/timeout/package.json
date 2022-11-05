@@ -1,25 +1,17 @@
 {
   "name": "@onehook/timeout",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && builder && tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "publish:lib": "yarn publish --access public"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/simonboisset/onehook",
-    "directory": "packages/timeout"
-  },
-  "bugs": {
-    "url": "https://github.com/simonboisset/onehook/issues"
-  },
+  "repository": { "type": "git", "url": "https://github.com/simonboisset/onehook", "directory": "packages/timeout" },
+  "bugs": { "url": "https://github.com/simonboisset/onehook/issues" },
   "homepage": "https://github.com/simonboisset/onehook",
   "author": "Simon Boisset <simonboisset.dev@gmail.com>",
   "license": "MIT",
@@ -32,13 +24,7 @@
     "react-dom": "^18.1.0",
     "typescript": "^4.7.3"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
+  "peerDependencies": { "react": ">=16" },
   "dependencies": {},
-  "keywords": [
-    "typescript",
-    "react",
-    "hook"
-  ]
+  "keywords": ["typescript", "react", "hook"]
 }

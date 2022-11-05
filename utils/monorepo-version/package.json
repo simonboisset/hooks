@@ -1,13 +1,11 @@
 {
   "name": "monorepo-version",
-  "version": "0.6.1",
+  "version": "0.1.6",
   "description": "Typed schema validation",
   "bin": "index.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && builder && tsc",
     "test:watch": "vitest",
@@ -16,15 +14,6 @@
   },
   "author": "Simon Boisset <simonboisset.dev@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@types/prettier": "latest",
-    "builder": "*",
-    "vitest": "^0.24.0",
-    "typescript": "^4.7.4"
-  },
-  "keywords": [
-    "typescript",
-    "validation",
-    "schema"
-  ]
+  "devDependencies": { "@types/prettier": "latest", "builder": "*", "vitest": "^0.24.0", "typescript": "^4.7.4" },
+  "keywords": ["typescript", "validation", "schema"]
 }
